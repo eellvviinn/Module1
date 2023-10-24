@@ -1,4 +1,4 @@
-package com.cloudate8.module1.one;
+package com.skymate8.module1.one;
 
 public class TwoDShape {
 

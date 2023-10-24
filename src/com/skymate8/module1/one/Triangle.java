@@ -1,4 +1,4 @@
-package com.cloudate8.module1.one;
+package com.skymate8.module1.one;
 
 public class Triangle extends TwoDShape {
 
@@ -28,6 +28,7 @@ public class Triangle extends TwoDShape {
     @Override
     public double getArea() {
         double area = (side1*height)/2;
+        return area;
     }
 
 }
