@@ -1,6 +1,6 @@
-package com.skymate8.module1.two;
+package com.skymate8.module1.three;
 
-public class Circle extends TwoDShape{
+public class Circle extends TwoDShape {
 
     //Fields
     public final double PI = Math.PI;

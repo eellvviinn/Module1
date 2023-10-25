@@ -1,11 +1,12 @@
-package com.skymate8.module1.two;
+package com.skymate8.module1.four;
 
-public class Triangle extends TwoDShape {
+public class Triangle extends TwoDShape implements Rotate {
 
     //Fields
     double side1;
     double side2;
     double side3;
+    double angle = 360;
 
     //Constructors
     public Triangle(double width, double height) {
@@ -18,6 +19,7 @@ public class Triangle extends TwoDShape {
         this.side3 = side3;
         super.height = heronsHeight();
         super.width = side1;
+        super(RED);
     }
 
     //Methods
@@ -39,4 +41,18 @@ public class Triangle extends TwoDShape {
         return "Height = " + heronsHeight() + "\nBase = " + side1 + "\nArea = " + getArea();
     }
 
+    @Override
+    public void rotate(double degrees) {
+        angle += degrees;
+    }
+
+    @Override
+    public void rotate90() {
+        rotate(90);
+    }
+
+    @Override
+    public void rotate180() {
+        rotate(180);
+    }
 }
