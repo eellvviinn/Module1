@@ -13,13 +13,13 @@ public class Triangle extends TwoDShape implements Rotate {
         super(width, height);
     }
 
-    public Triangle(double side1, double side2, double side3) {
+    public Triangle(double side1, double side2, double side3, Colour colour) {
+        super(colour);
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
         super.height = heronsHeight();
         super.width = side1;
-        super(RED);
     }
 
     //Methods

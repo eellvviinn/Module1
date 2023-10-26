@@ -7,7 +7,8 @@ public class Circle extends TwoDShape {
     private double radius;
 
     //Constructors
-    public Circle(double radius) {
+    public Circle(double radius, Colour colour) {
+        super(colour);
         this.radius = radius;
     }
 
