@@ -14,7 +14,6 @@ public class Triangle extends TwoDShape implements Rotate {
      *
      * @param width  the width of the triangle
      * @param height the height of the triangle
-     * @param colour the colour of the triangle
      */
     //Constructors
     public Triangle(double width, double height) {
@@ -47,33 +46,51 @@ public class Triangle extends TwoDShape implements Rotate {
      * @return the height of the triangle
      */
     private double heronsHeight() {
+        // Formula taken from https://www.youtube.com/watch?v=a1PR9O1Va84
         double s = (side1 + side2 + side3) / 2.0;
         double area = Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
         double height = ((area/0.5)/side1);
         return height;
     }
-
+    /**
+     * Get the area of the triangle, using the formula 1/2 * base * height
+     *
+     * @return the area of the triangle
+     */
     @Override
     public double getArea() {
         double area = (side1*height)/2;
         return area;
     }
-
+    /**
+     * Get the string representation of the triangle, including all of its fields
+     *
+     * @return the string representation of the triangle
+     */
     @Override
     public String toString() {
         return "Height = " + heronsHeight() + "\nBase = " + side1 + "\nArea = " + getArea();
     }
-
+    /**
+     * Rotates the shape by the specified number of degrees clockwise
+     *
+     * @param degrees the number of degrees to rotate the shape
+     */
     @Override
     public void rotate(double degrees) {
         angle += degrees;
     }
+    /**
+     * Rotates the shape 90 degrees clockwise
+     */
 
     @Override
     public void rotate90() {
         rotate(90);
     }
-
+    /**
+     * Rotates the shape 180 degrees clockwise
+     */
     @Override
     public void rotate180() {
         rotate(180);

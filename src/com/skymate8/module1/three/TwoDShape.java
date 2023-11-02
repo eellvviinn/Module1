@@ -1,5 +1,4 @@
 package com.skymate8.module1.three;
-
 public abstract class TwoDShape {
 
     //Fields
