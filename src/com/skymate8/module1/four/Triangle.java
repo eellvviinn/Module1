@@ -59,7 +59,7 @@ public class Triangle extends TwoDShape implements Rotate {
      */
     @Override
     public double getArea() {
-        double area = (side1*height)/2;
+        double area = (width*height)/2;
         return area;
     }
     /**

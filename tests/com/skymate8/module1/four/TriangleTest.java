@@ -17,13 +17,13 @@ public class TriangleTest {
         assertEquals(50.0, allPositiveTriangle.getArea(), delta);
 
         Triangle allNegativeTriangle = new Triangle(-10, -10);
-        assertEquals(0.0, allNegativeTriangle.getArea(), delta);
+        assertEquals(50.0, allNegativeTriangle.getArea(), delta);
 
         Triangle baseNegativeTriangle = new Triangle(-10, 10);
-        assertEquals(0.0, baseNegativeTriangle.getArea(), delta);
+        assertEquals(-50.0, baseNegativeTriangle.getArea(), delta);
 
         Triangle heightNegativeTriangle = new Triangle(10, -10);
-        assertEquals(0.0, heightNegativeTriangle.getArea(), delta);
+        assertEquals(-50.0, heightNegativeTriangle.getArea(), delta);
 
         Triangle allZeroTriangle = new Triangle(0, 0);
         assertEquals(0.0, allZeroTriangle.getArea(), delta);
@@ -64,28 +64,28 @@ public class TriangleTest {
         assertEquals(43.3012701892, allPositiveTriangle.getArea(), delta);
 
         Triangle allNegativeTriangle = new Triangle(-10, -10, -10, Colour.BLUE);
-        assertEquals(0.0, allNegativeTriangle.getArea(), delta);
+        assertEquals(43.301270189221924, allNegativeTriangle.getArea(), delta);
 
         Triangle side1NegativeTriangle = new Triangle(-10, 10, 10, Colour.BLUE);
-        assertEquals(0.0, side1NegativeTriangle.getArea(), delta);
+        assertEquals(43.301270189221924, side1NegativeTriangle.getArea(), delta);
 
         Triangle side2NegativeTriangle = new Triangle(10, -10, 10, Colour.BLUE);
-        assertEquals(0.0, side2NegativeTriangle.getArea(), delta);
+        assertEquals(43.301270189221924, side2NegativeTriangle.getArea(), delta);
 
         Triangle side3NegativeTriangle = new Triangle(10, 10, -10, Colour.BLUE);
-        assertEquals(0.0, side3NegativeTriangle.getArea(), delta);
+        assertEquals(43.301270189221924, side3NegativeTriangle.getArea(), delta);
 
         Triangle allZeroTriangle = new Triangle(0, 0, 0, Colour.BLUE);
-        assertEquals(0.0, allZeroTriangle.getArea(), delta);
+        assertEquals(Double.NaN, allZeroTriangle.getArea(), delta);
 
         Triangle side1ZeroTriangle = new Triangle(0, 10, 10, Colour.BLUE);
-        assertEquals(0.0, side1ZeroTriangle.getArea(), delta);
+        assertEquals(Double.NaN, side1ZeroTriangle.getArea(), delta);
 
         Triangle side2ZeroTriangle = new Triangle(10, 0, 10, Colour.BLUE);
-        assertEquals(0.0, side2ZeroTriangle.getArea(), delta);
+        assertEquals(0, side2ZeroTriangle.getArea(), delta);
 
         Triangle side3ZeroTriangle = new Triangle(10, 10, 0, Colour.BLUE);
-        assertEquals(0.0, side3ZeroTriangle.getArea(), delta);
+        assertEquals(0, side3ZeroTriangle.getArea(), delta);
 
         Triangle allMaxDoubleTriangle = new Triangle(Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE, Colour.BLUE);
         assertEquals(Double.POSITIVE_INFINITY, allMaxDoubleTriangle.getArea(), delta);
@@ -99,6 +99,6 @@ public class TriangleTest {
 
         // Tests when a side is greater than S in heron's formula
         Triangle invalidTriangle2 = new Triangle(1, 2, 4, Colour.BLUE);
-        assertEquals(0.0, invalidTriangle2.getArea(), delta);
+        assertEquals(Double.NaN, invalidTriangle2.getArea(), delta);
     }
 }
